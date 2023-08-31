@@ -34,5 +34,5 @@ The Streamline Stock Tracker Website is a web application designed to streamline
 ![Website Preview](/assets/website_preview.gif)
 
 ## Collaborators
--Chukwuemeka Nwosu @kachu1212
--Happiness Ede @happynel
+- Chukwuemeka Nwosu [Kachu1212](https://github.com/Kachu1212)
+- Happiness Ede [happynel](https://github.com/happynel)
