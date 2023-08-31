@@ -14,20 +14,21 @@ The Streamline Stock Tracker Website is a web application designed to streamline
 
 - **Detailed Product View:** Access detailed information about a specific product, including its description and related products.
 
-## Tech Stack
+## Technology Stack
 
 - **Front-End:** HTML, CSS, JavaScript
 - **Back-End:** Node.js, Express.js
-- **Database:** MongoDB (via Mongoose)
+- **Database:** MySQL
 - **View Engine:** Pug (formerly Jade) for rendering dynamic views
 
-## Getting Started
+## Setting up environment and Execution
 
 1. Clone the repository: `git clone https://github.com/Kachu1212/Streamline_test.git`
 2. Install dependencies: `npm install`
-3. Set up your MongoDB connection in `config/database.js`.
+3. Set up your mySQL connection in `config/database.js`.
 4. Run the application: `npm start`
-5. Open your web browser and go to `http://localhost:3000` to access the Inventory Management System.
+5. Open your web browser and go to `(http://localhost:3000)` to access the Streamline Stock Tracker.
+
 
 ## Demo
 
