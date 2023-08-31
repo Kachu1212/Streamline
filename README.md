@@ -29,10 +29,10 @@ The Streamline Stock Tracker Website is a web application designed to streamline
 4. Run the application: `npm start`
 5. Open your web browser and go to `http://localhost:3000` to access the Inventory Management System.
 
-## Preview
+## Demo
 
 ![Website Preview](/assets/website_preview.gif)
 
 ## Collaborators
-Chukwuemeka Nwosu
-Happiness Ede
+-Chukwuemeka Nwosu @kachu1212
+-Happiness Ede @happynel
