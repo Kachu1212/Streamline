@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to Inventory Application.
+
+  h1 Dynamic content
+
+  p The inventory has the following record counts:
+
+  ul
+    a(href="/catalog/Desktop")
+      li #[strong Desktop:] #{desktop_count}
+    a(href="/catalog/Headphone")
+      li #[strong Headphone:] #{headphone_count}
+    a(href="/catalog/Keyboard")
+      li #[strong Keyboard:] #{keyboard_count}
+    a(href="/catalog/Laptop")
+      li #[strong Laptop:] #{laptop_count}
+    a(href="/catalog/Mouse")
+      li #[strong Mouse:] #{mouse_count}
