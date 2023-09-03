@@ -1,6 +1,6 @@
 app.get("/createDatabase", (req, res) => {
 
-	let databaseName = "streamlinedb";
+	let databaseName = "streamline";
 
 	let createQuery = `CREATE DATABASE ${databaseName}`;
 
