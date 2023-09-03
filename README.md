@@ -1,4 +1,4 @@
-# Stline Stock Tracker 
+# Streamline Stock Tracker 
 
 The Streamline Stock Tracker is a web application designed to streamline inventory tracking and management processes. It provides a user-friendly interface for adding, updating, and managing various types of products within an inventory. This system is particularly useful for businesses and organizations that need to keep track of their stock, pricing, and other essential product details.
 
