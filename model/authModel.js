@@ -1,8 +1,3 @@
-/**
- * Created by Rohit Raj.
- * Date: 15/8/18
- * Version : v1.0
- */
 
 var dbHandler = require('../lib/databaseHandler').dbHandler;
 var constants = require('../lib/constants');

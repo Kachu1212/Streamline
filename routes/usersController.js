@@ -1,9 +1,3 @@
-/**
- * Created by Rohit Raj.
- * Date: 15/8/18
- * Version : v1.0
- */
-
 var router  = require('express').Router();
 var uuid    = require('uuid/v4');
 var bcrypt  = require('bcryptjs');

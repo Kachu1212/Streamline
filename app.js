@@ -1,7 +1,5 @@
 /**
- * Created by Rohit Raj.
- * Date: 15/8/18
- * Version : v1.0
+ * Created fo steamline project
  */
 
 process.env.NODE_CONFIG_DIR = __dirname + '/config/';
