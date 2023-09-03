@@ -25,7 +25,7 @@ The Streamline Stock Tracker is a web application designed to streamline invento
 
 1. Clone the repository: `git clone https://github.com/Kachu1212/Streamline_test.git`
 2. Install dependencies: `npm install`
-3. Set up your mySQL connection in `config/database.js`.
+3. Set up your mySQL connection in `db_con.js`.
 4. Run the application: `npm start`
 5. Open your web browser and go to `(http://localhost:3000)` to access the Streamline Stock Tracker.
 
