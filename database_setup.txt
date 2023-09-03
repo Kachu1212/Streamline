@@ -6,19 +6,20 @@ We are going to see how to create and use mysql database in nodejs. We are going
 
 Syntax:
 
-#Create Database Query: CREATE DATABASE streamlinedb;
+#Create Database Query: CREATE DATABASE streamline;
 
-#Use Database Query: USE streamlinedb
+#Use Database Query: USE streamline
 
 Modules:
 NodeJs
 ExpressJs
 MySql
-Setting up environment and Execution:
+
+#Setting up environment and Execution:
 
 #Create Project
 npm init
-Install Modules
+#Install Modules
 npm install express
 npm install mysql
 
@@ -46,7 +47,7 @@ module.exports = db_con;
 
 #Create Server:
 
-index,js
+index.js
 const express = require("express");
 const database = require('./sqlConnection');
 
