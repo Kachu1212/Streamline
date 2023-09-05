@@ -1,5 +1,5 @@
 /**
- * Created fo steamline project
+ * Created for steamline project
  */
 
 process.env.NODE_CONFIG_DIR = __dirname + '/config/';
