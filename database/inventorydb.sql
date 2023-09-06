@@ -1,12 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.1.3
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Apr 20, 2022 at 05:02 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.28
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -18,9 +9,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `inventorydb`
---
-
+-- Database: `streamlime`
 -- --------------------------------------------------------
 
 --
@@ -28,36 +17,46 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admins` (
-  `id` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `password` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
+  `auth_token` VARCHAR(100) DEFAULT NULL,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   PRIMARY KEY (`id`),
+   UNIQUE KEY `uq_username` (`username`)
+  ) ENGINE=InnoDB, AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `admins`
 --
 
 INSERT INTO `admins` (`id`, `username`, `password`) VALUES
-(1, 'admin', '$2a$10$I3qKkNLEUGVIqbGCNyydSOovA5t.0385z7.BQI2vc8IuHms1U3dgi');
+(1, 'admin', '$2asU3di');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customers`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `customers` (
-  `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `users` (
+  ``id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
+  `auth_token` VARCHAR(100) DEFAULT NULL,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   PRIMARY KEY (`id`),
+   UNIQUE KEY `uq_username` (`username`)
+  ) ENGINE=InnoDB, AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `customers`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `customers` (`id`, `username`, `password`) VALUES
-(1, 'adones', '$2a$10$gPlX7FlRFIwcB9E.N4MjROEdryV2MnsMfmFzv6ZAgmKI7u254heVW');
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+(1, 'adones', '$2a$10$g');
 
 -- --------------------------------------------------------
 
@@ -66,28 +65,48 @@ INSERT INTO `customers` (`id`, `username`, `password`) VALUES
 --
 
 CREATE TABLE `orders` (
-  `id` int(11) NOT NULL,
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `pid` int(11) NOT NULL,
-  `uid` int(11) NOT NULL,
-  `qty` int(11) NOT NULL,
-  `status` varchar(100) NOT NULL DEFAULT 'ordered'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `pid` VARCHAR(100) NOT NULL,
+  `uid` VARCHAR(100) NOT NULL,
+  `qty` VARCHAR(100) NOT NULL,
+  `status` VARCHAR(100) NOT NULL DEFAULT 'ordered'
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
+--
+-- Table structure for table `paid`
+--
 
+CREATE TABLE `paid` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `pid` VARCHAR(100) NOT NULL,
+  `uid` VARCHAR(100) NOT NULL,
+  `quantity` VARCHAR(100) NOT NULL,
+  `status` VARCHAR(100) NOT NULL DEFAULT 'paid'
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
 --
 -- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
-  `id` int(11) NOT NULL,
-  `name` varchar(1000) NOT NULL,
-  `descr` text NOT NULL,
-  `price` int(11) NOT NULL,
-  `stock` int(11) NOT NULL,
-  `picture` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255 NOT NULL,
+  `category` VARCHAR(255) NOT NULL,
+  `brand` VARCHAR(255) NOT NULL,
+  `description` VARCHAR(255) NOT NULL,
+  `price` INT(20) NOT NULL,
+  `quantity` INT(20) NOT NULL,
+  `created_by` VARCHAR(127) DEFAULT NULL,
+  `updated_by` VARCHAR(127) DEFAULT NULL,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY (`id`),
+   UNIQUE KEY `uq_username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `products`
@@ -100,6 +119,25 @@ INSERT INTO `products` (`id`, `name`, `descr`, `price`, `stock`, `picture`) VALU
 (5, 'Deodorant: Coconut Cream', 'An organic cream deodorant made with soothing ingredients that effectively neutralize odor and plant-based powders that help absorb wetness, so you stay fresh naturally.', 122, 100, '40e14cf92b6d21976908d25fa136ccbf.jpg'),
 (6, 'Xanthone Plus Capsule', 'The best medicine for health issues', 250, 100, '6b72346f80fb5478f34ef8558e4be80d.jpg'),
 (7, 'Malunggay Medicine', 'Moringa Oleifera or locally known as Malungay, is widely used as a vegetable ingredient in cooking. It is a popular plant known for high nutritional value as well as an herbal medicine a number of illness and other practical uses.', 350, 100, 'bc0cd8fd7a3bcfa86a8efad5effa452e.jpg');
+-- --------------------------------------------------------
+--
+-- Table structure for table `variant`
+--
+
+CREATE TABLE `variant` (
+    `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+    `product_id` VARCHAR(255) NOT NULL,
+    `name` VARCHAR(255) DEFAULT NULL,
+    `selling_price` INT(20) DEFAULT NULL,
+    `cost_price` INT(20) DEFAULT NULL,
+    `quantity` INT(20) DEFAULT NULL,
+    `status` VARCHAR(20) DEFAULT NULL,
+    `restock` BOOLEAN,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+     PRIMARY KEY (`id`),
+     UNIQUE KEY `uq_username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 --
 -- Indexes for dumped tables
@@ -112,9 +150,9 @@ ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `customers`
+-- Indexes for table `users`
 --
-ALTER TABLE `customers`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -137,25 +175,25 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `customers`
+-- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `users`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
