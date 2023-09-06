@@ -24,7 +24,7 @@ exports.validateLogin = function () {
          */
 
         var sql = 'SELECT * FROM users WHERE ' +
-                'uuid = ?';
+                'username = ?';
 
         var sqlQuery = dbHandler.getInstance().executeQuery(sql, [userId], function (err, userInfo) {
             if (err || !userInfo.length) {
