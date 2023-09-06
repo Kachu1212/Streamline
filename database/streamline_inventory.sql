@@ -140,6 +140,37 @@ CREATE TABLE `variant` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 --
+-- CRUD operations
+--
+
+-- SELECT (Read) operation:
+-- Retrieve all products
+SELECT * FROM product;
+
+-- Retrieve products from a specific category
+SELECT * FROM product WHERE category_id = 1;
+
+-- Retrieve a specific product by ID
+SELECT * FROM product WHERE product_id = 1;
+
+-- INSERT (Create) operation:
+
+-- Insert a new product
+INSERT INTO product (category_id, product_name, description, cost_price, selling_price, quantity_sold, quantity_left, restock)
+VALUES (1, 'New Product', 'New Description', 9.99, 19.99, 0, 100, 1);
+
+-- UPDATE operation:
+-- Update product information
+UPDATE product
+SET description = 'Updated Description', selling_price = 24.99
+WHERE product_id = 1;
+
+-- DELETE operation:
+-- Delete a product by ID
+DELETE FROM product WHERE product_id = 2;
+
+
+--
 -- Indexes for dumped tables
 --
 
@@ -187,6 +218,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `paid`
+--
+ALTER TABLE `paid`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
 
 --
