@@ -47,7 +47,7 @@ Follow these steps to get your project up and running:
 
 ## Demo
 
-![Website Preview](/public/website_preview.gif)
+![Website Preview](/public/images/website_preview.gif)
 
 ## Collaborators
 - Chukwuemeka Nwosu [Kachu1212](https://github.com/Kachu1212)
