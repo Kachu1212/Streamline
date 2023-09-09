@@ -9,17 +9,26 @@
 a {
   text-decoration: none;
 }
+
+  html {
+    scroll-behavior: smooth;
+}
 .header {
-  position: fixed;
+  position: relative;
   height: 80px;
   width: 100%;
   z-index: 100;
   padding: 0 20px;
+  background-color: #0f0122;
 }
 .nav {
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
+  background-color: #0f0122;
+  left: 0%;
+  right: 0%;
+  padding: 20px;
 }
 .nav,
 .nav_item {
@@ -35,23 +44,45 @@ a {
   color: #fff;
 }
 .nav_logo {
-  font-size: 25px;
+  font-size: 35px;
   display: flex; /* Enable flex layout for logo and text alignment */
   align-items: center; 
 }
   .logo {
-    max-width: 50px; /* Set the maximum width for your logo image */
+    max-width: 80px; /* Set the maximum width for your logo image */
     height: auto;
-    margin-left: 10px; /* Adjust the margin as needed to separate the logo from text */
+    margin-left: 0%; /* Adjust the margin as needed to separate the logo from text */
     padding-right: 0%;
+    padding-top: 5%;
+    right: 25%;
 
 }
 .nav_item {
-  column-gap: 25px;
+  column-gap: 40px;
+  font-size: larger;
 }
 .nav_link:hover {
   color: #d9d9d9;
 }
+
+
+.contact-info {
+    display: none;
+    max-width: 250px;
+    margin: 30px auto;
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    right: 25%;
+}
+
+
+.contact-info p {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: white;
+}
+
 .button {
   padding: 6px 24px;
   border: 2px solid #fff;

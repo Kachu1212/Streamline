@@ -1,3 +1,13 @@
+function toggleContact() {
+  var contactInfo = document.querySelector('.contact-info');
+  if (contactInfo.style.display === 'none' || contactInfo.style.display === '') {
+      contactInfo.style.display = 'block';
+  } else {
+      contactInfo.style.display = 'none';
+  }
+}
+
+
 const formOpenBtn = document.querySelector("#form-open"),
   home = document.querySelector(".home"),
   formContainer = document.querySelector(".form_container"),
