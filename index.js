@@ -10,7 +10,7 @@ app.set('view engine', 'pug')
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(_dirname, './public/index.htnl'));
+    res.sendFile(path.join(__dirname, './public/index.html'));
 });
 // const dashboardRouter = require('./routes/dashboard');
 // app.use('/', dashboardRouter);
