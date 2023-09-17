@@ -5,12 +5,17 @@ const path = require('path')
 
 const app = express();
 
+app.use(express.static('public'))
+app.use(express.static('files'))
+
 app.set(path.join(__dirname, './public/index.html'))
 app.set('view engine', 'pug')
 
 
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
+    
 });
 // const dashboardRouter = require('./routes/dashboard');
 // app.use('/', dashboardRouter);
